@@ -85,10 +85,15 @@
   --solve: hsl(198, 20%, 13%);
 }
 
+body {
+  background-color: var(--main-background);
+}
+
 #main-div {
   min-height: 100dvh;
   min-width: 100%;
   place-items: center;
+  padding: 1.5rem 1rem;
 
   background-color: var(--main-background);
 }
@@ -257,4 +262,10 @@ button {
 
 #theme-slider:focus {
   outline: none;
+}
+
+@media screen and (width > 768px) {
+  #main-div {
+    padding: 0rem 0rem;
+  }
 }
