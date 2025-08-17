@@ -1,0 +1,260 @@
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap");
+
+* {
+  /* font-size: 32px; */
+  box-sizing: border-box;
+  font-family: "league spartan" sans-serif;
+  font-weight: 700;
+}
+
+:root {
+  /* backgrounds */
+  --main-background: hsl(222, 26%, 31%);
+  --toggle-background: hsl(223, 31%, 20%);
+  --keypad-background: hsl(223, 31%, 20%);
+  --screen-background: hsl(224, 36%, 15%);
+
+  /* Keys */
+  --key-background-one: hsl(225, 21%, 49%);
+  --key-shadow-one: hsl(224, 28%, 35%);
+  --key-background-two: hsl(6, 63%, 50%);
+  --toggle: hsl(6, 63%, 50%);
+  --key-shadow-two: hsl(6, 70%, 34%);
+  --key-background-three: hsl(0, 0%, 90%);
+  --key-shadow-three: hsl(28, 16%, 65%);
+
+  /* Texts */
+  --text-one: hsl(221, 14%, 31%);
+  --text-two: hsl(221, 14%, 31%);
+  --White-text: hsl(0, 100%, 100%);
+
+  --button-arithmetic: hsl(221, 14%, 31%);
+  --input-field-text: hsl(0, 0%, 90%);
+  --solve: hsl(0, 0%, 90%);
+}
+
+:root[color-two] {
+  /* backgrounds */
+  --main-background: hsl(0, 0%, 90%);
+  --toggle-background: hsl(0, 5%, 81%);
+  --keypad-background: hsl(0, 5%, 81%);
+  --screen-background: hsl(0, 0%, 93%);
+
+  /* Keys */
+  --key-background-one: hsl(185, 42%, 37%);
+  --key-shadow-one: hsl(185, 58%, 25%);
+  --key-background-two: hsl(25, 98%, 40%);
+  --toggle: hsl(25, 98%, 40%);
+  --key-shadow-two: hsl(25, 99%, 27%);
+  --key-background-three: hsl(0, 0%, 90%);
+  --key-shadow-three: hsl(35, 11%, 61%);
+
+  /* Texts */
+  --text-one: hsl(60, 10%, 19%);
+  --text-two: hsl(60, 10%, 19%);
+  --White-text: hsl(0, 100%, 100%);
+
+  --button-arithmetic: hsl(60, 10%, 19%);
+  --input-field-text: hsl(60, 10%, 19%);
+  --solve: hsl(0, 0%, 90%);
+}
+
+:root[color-three] {
+  /* backgrounds */
+  --main-background: hsl(268, 75%, 9%);
+  --toggle-background: hsl(268, 71%, 12%);
+  --keypad-background: hsl(268, 71%, 12%);
+  --screen-background: hsl(268, 71%, 12%);
+
+  /* Keys */
+  --key-background-one: hsl(281, 89%, 26%);
+  --key-shadow-one: hsl(285, 91%, 52%);
+  --key-background-two: hsl(176, 100%, 44%);
+  --toggle: hsl(176, 100%, 44%);
+  --key-shadow-two: hsl(177, 92%, 70%);
+  --key-background-three: hsl(268, 47%, 21%);
+  --key-shadow-three: hsl(290, 70%, 36%);
+
+  /* Texts */
+  --text-one: hsl(52, 100%, 62%);
+  --text-two: hsl(198, 20%, 13%);
+  --White-text: hsl(0, 100%, 100%);
+
+  --button-arithmetic: hsl(52, 100%, 62%);
+  --input-field-text: hsl(52, 100%, 62%);
+  --solve: hsl(198, 20%, 13%);
+}
+
+#main-div {
+  min-height: 100dvh;
+  min-width: 100%;
+  place-items: center;
+
+  background-color: var(--main-background);
+}
+
+#inner-div {
+  width: 100%;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border-radius: 10px;
+}
+
+#inner-div span {
+  font-size: 20px;
+}
+
+#input-field {
+  padding: 20px 10px;
+  border-radius: 10px;
+  color: var(--input-field-text);
+  background-color: var(--screen-background);
+  border: none;
+  text-align: right;
+  font-size: 32px;
+}
+
+#buttons-div {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  gap: 10px;
+  padding: 15px;
+  border-radius: 10px;
+
+  background-color: var(--keypad-background);
+}
+
+.input-button {
+  font-size: 32px;
+}
+
+input[type="button"],
+button {
+  border-radius: 5px;
+  border: none;
+  padding: 5px;
+  cursor: pointer;
+}
+
+#reset {
+  grid-area: 5/1/6/3;
+}
+
+#solve {
+  grid-area: 5/3/6/5;
+}
+
+#reset,
+#delete-btn {
+  background-color: var(--key-background-one);
+  color: var(--White-text);
+}
+
+.input-button,
+.arithmetics {
+  background-color: var(--key-background-three);
+  color: var(--button-arithmetic);
+}
+
+.arithmetics {
+  font-size: 1.3rem;
+}
+
+#solve {
+  background-color: var(--key-background-two);
+  color: var(--solve);
+  font-size: 1.2rem;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  span {
+    color: var(--input-field-text);
+  }
+}
+
+.theme-handler-div {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+#theme-switcher {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.slider-labels {
+  display: flex;
+  justify-content: space-between;
+  width: 3.75rem;
+  font-size: 0.8rem;
+  color: var(--White-text);
+}
+
+#theme-slider {
+  width: 3.75rem;
+  accent-color: var(--toggle);
+  background: transparent;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+#theme-slider::-webkit-slider-thumb {
+  width: 1rem;
+  height: 1rem;
+  margin: 0.2rem 0rem;
+  border-radius: 50%;
+  background: var(--toggle);
+  border: 2px solid var(--main-background);
+  box-shadow: 0 0 2px #0004;
+  transition: background 0.2s;
+}
+
+#theme-slider::-webkit-slider-runnable-track {
+  height: 1.4rem;
+  padding-inline: 0.4rem;
+  border-radius: 0.7rem;
+  background: var(--toggle-background);
+}
+
+#theme-slider::-moz-range-thumb {
+  width: 1rem;
+  height: 1rem;
+  margin: 0.2rem 0rem;
+  border-radius: 50%;
+  background: var(--toggle);
+  border: 2px solid var(--main-background);
+}
+
+#theme-slider::-moz-range-track {
+  height: 1.4rem;
+  border-radius: 0.7rem;
+  background: var(--toggle-background);
+}
+
+#theme-slider::-ms-thumb {
+  width: 1rem;
+  height: 1rem;
+  margin: 0.2rem 0rem;
+  border-radius: 50%;
+  background: var(--toggle);
+  border: 2px solid var(--main-background);
+}
+
+#theme-slider::-ms-fill-lower,
+#theme-slider::-ms-fill-upper {
+  background: var(--toggle-background);
+}
+
+#theme-slider:focus {
+  outline: none;
+}
