@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/src/style.css" />
     <title>Calculator App</title>
+    <script src="/src/main.js" defer></script>
   </head>
   <body>
     <div id="main-div">
@@ -32,25 +33,25 @@
             </div>
           </div>
         </div>
-        <input type="text" name="" id="input-field" />
+        <input type="text" name="" id="input-field" readonly />
         <div id="buttons-div">
           <input
             type="button"
             value="7"
             class="input-button shadows"
-            onclick="handleNumbers(value)"
+            onclick="addToDisplay(value)"
           />
           <input
             type="button"
             value="8"
             class="input-button shadows"
-            onclick="handleNumbers(value)"
+            onclick="addToDisplay(value)"
           />
           <input
             type="button"
             value="9"
             class="input-button shadows"
-            onclick="handleNumbers(value)"
+            onclick="addToDisplay(value)"
           />
           <input
             type="button"
@@ -63,72 +64,72 @@
             type="button"
             value="4"
             class="input-button shadows"
-            onclick="handleNumbers(value)"
+            onclick="addToDisplay(value)"
           />
           <input
             type="button"
             value="5"
             class="input-button shadows"
-            onclick="handleNumbers(value)"
+            onclick="addToDisplay(value)"
           />
           <input
             type="button"
             value="6"
             class="input-button shadows"
-            onclick="handleNumbers(value)"
+            onclick="addToDisplay(value)"
           />
           <input
             type="button"
             value="+"
             class="shadows arithmetics"
-            onclick="handleNumbers(value)"
+            onclick="addToDisplay(value)"
           />
           <input
             type="button"
             value="1"
             class="input-button shadows"
-            onclick="handleNumbers(value)"
+            onclick="addToDisplay(value)"
           />
           <input
             type="button"
             value="2"
             class="input-button shadows"
-            onclick="handleNumbers(value)"
+            onclick="addToDisplay(value)"
           />
           <input
             type="button"
             value="3"
             class="input-button shadows"
-            onclick="handleNumbers(value)"
+            onclick="addToDisplay(value)"
           />
           <input
             type="button"
             value="-"
             class="shadows arithmetics"
-            onclick="handleNumbers(value)"
+            onclick="addToDisplay(value)"
           />
           <input
             type="button"
             value="."
             class="input-button shadows"
-            onclick="handleNumbers(value)"
+            onclick="addToDisplay(value)"
           />
           <input
             type="button"
             value="0"
             class="input-button shadows"
-            onclick="handleNumbers(value)"
+            onclick="addToDisplay(value)"
           />
           <input
             type="button"
             value="/"
             class="shadows arithmetics"
-            onclick="handleNumbers(value)"
+            onclick="addToDisplay(value)"
           />
           <button
-            value="*"
+            value="x"
             class="shadows arithmetics"
-            onclick="handleNumbers(value)"
+            onclick="addToDisplay(value)"
           >
             X
           </button>
@@ -137,59 +138,13 @@
             value="RESET"
             class="shadows"
             id="reset"
-            onclick="resetField()"
+            onclick="clearDisplay()"
           />
           <input type="button" value="=" id="solve" onclick="solveAll()" />
         </div>
       </div>
     </div>
-    <script>
-      const inputField = document.getElementById("input-field");
-      const handleNumbers = (value) => {
-        inputField.value += value;
-      };
-      const solveAll = () => {
-        let value = inputField.value;
-        let newValue = value.replace(/,/g, "");
-        inputField.value = newValue;
-      };
-      const resetField = () => (inputField.value = "");
-      function deleteOne() {
-        if (inputField.value) {
-          inputField.value = inputField.value.slice(0, -1);
-        }
-      }
 
-      // Theme slider logic
-      const themeSlider = document.getElementById("theme-slider");
-      const root = document.documentElement;
-
-      function setThemeBySlider(val) {
-        root.removeAttribute("color-two");
-        root.removeAttribute("color-three");
-        if (val == 2 || val == "2") {
-          root.setAttribute("color-two", "");
-        } else if (val == 3 || val == "3") {
-          root.setAttribute("color-three", "");
-        }
-        // If 1, use default
-      }
-
-      themeSlider.addEventListener("input", (e) => {
-        setThemeBySlider(e.target.value);
-      });
-
-      window.addEventListener("DOMContentLoaded", () => {
-        let theme = 1;
-        if (window.matchMedia("(prefers-color-scheme: light)").matches) {
-          theme = 2;
-        } else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-          theme = 1;
-        }
-        themeSlider.value = theme;
-        setThemeBySlider(theme);
-      });
-    </script>
     <!-- <script type="module" src="/src/main.js"></script> -->
   </body>
 </html>
