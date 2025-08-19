@@ -39,13 +39,17 @@ function addToDisplay(value) {
   display.value += value;
 }
 
+window.addToDisplay = addToDisplay;
+
 function clearDisplay() {
   display.value = "";
 }
+window.clearDisplay = clearDisplay;
 
 function deleteOne() {
   display.value = display.value.slice(0, -1);
 }
+window.deleteOne = deleteOne;
 
 document.addEventListener("keydown", function (event) {
   const key = event.key;
@@ -164,3 +168,5 @@ const calc = new SimpleCalculator();
 const solveAll = () => {
   display.value = calc.calculate(display.value);
 };
+
+window.solveAll = solveAll;
